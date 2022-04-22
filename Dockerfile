@@ -54,4 +54,4 @@ RUN conda install -c conda-forge vtk=8.1 -n pylat -y && \
 RUN cp /code/docker/entrypoint.sh /usr/local/bin/ && \
     chmod u+x /usr/local/bin/entrypoint.sh
 
-# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
