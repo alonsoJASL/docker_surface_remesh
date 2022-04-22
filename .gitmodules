@@ -1,0 +1,6 @@
+[submodule "imatools"]
+	path = imatools
+	url = https://github.com/alonsoJASL/imatools.git
+[submodule "quLATi"]
+	path = quLATi
+	url = https://github.com/samcoveney/quLATi.git
