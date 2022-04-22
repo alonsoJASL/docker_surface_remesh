@@ -13,9 +13,6 @@ RUN mkdir /data && mkdir /code && mkdir /tempfiles
 
 RUN git clone --recurse-submodules -j8 https://github.com/alonsoJASL/docker_surface_remesh.git /code
 
-COPY docker/entrypoint.sh /usr/local/bin/
-RUN chmod u+x /usr/local/bin/entrypoint.sh
-
 ENV HOME /home/surf_remesh
 
 # install miniconda
@@ -54,4 +51,7 @@ RUN conda install -c conda-forge vtk=8.1 -n pylat -y && \
     conda install -c conda-forge matplotlib -n pylat -y && \
     conda clean --all --yes
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+COPY /code/docker/entrypoint.sh /usr/local/bin/
+RUN chmod u+x /usr/local/bin/entrypoint.sh
+
+# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

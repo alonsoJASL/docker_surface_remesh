@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash --login
+set -e
 export TERM=xterm
 
 echo "[Cemrg-Surf-Remesh]: Initialising... "
+conda init bash
 conda activate pylat
 
 echo "[Cemrg-Surf-Remesh]: Initialising... done"
