@@ -51,7 +51,7 @@ RUN conda install -c conda-forge vtk=8.1 -n pylat -y && \
     conda install -c conda-forge matplotlib -n pylat -y && \
     conda clean --all --yes
 
-COPY /code/docker/entrypoint.sh /usr/local/bin/
-RUN chmod u+x /usr/local/bin/entrypoint.sh
+RUN cp /code/docker/entrypoint.sh /usr/local/bin/ && \
+    chmod u+x /usr/local/bin/entrypoint.sh
 
 # ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
