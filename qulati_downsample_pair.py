@@ -1,7 +1,8 @@
 import sys, os
-QULATI_DIR=os.getcwd()+'/quLATi'
-IMATOOLS_DIR=os.getcwd()+'/imatools'
+QULATI_DIR='/code/quLATi'
+IMATOOLS_DIR='/code/imatools'
 sys.path.insert(1, QULATI_DIR)
+sys.path.insert(1, IMATOOLS_DIR)
 
 from qulati.meshutils import subset_anneal, subset_triangulate, extendMesh
 from imatools.vtktools import *
