@@ -1,6 +1,6 @@
 import sys, os
-QULATI_DIR='/code/quLATi'
-IMATOOLS_DIR='/code/imatools'
+QULATI_DIR=os.getcwd()+'/quLATi'
+IMATOOLS_DIR=os.getcwd()+'/imatools'
 sys.path.insert(1, QULATI_DIR)
 
 from qulati.meshutils import subset_anneal, subset_triangulate, extendMesh

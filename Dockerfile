@@ -11,5 +11,4 @@ RUN apt-get update --fix-missing && \
 
 RUN mkdir /data && mkdir /code
 
-RUN git clone https://github.com/alonsoJASL/imatools.git /code/imatools && \
-    git clone https://github.com/samcoveney/quLATi.git /code/quLATi
+RUN git clone
