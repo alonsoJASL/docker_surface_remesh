@@ -51,4 +51,5 @@ RUN conda install -c conda-forge vtk=8.1 -n pylat -y && \
     conda install -c conda-forge networkx -n pylat -y && \
     conda install -c conda-forge numba -n pylat -y && \
     conda install -c conda-forge trimesh -n pylat -y && \
+    conda install -c conda-forge matplotlib -n pylat -y && \
     conda clean --all --yes
