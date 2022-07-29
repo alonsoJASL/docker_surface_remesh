@@ -1,8 +1,6 @@
 import sys, os
-QULATI_DIR='/code/quLATi'
-IMATOOLS_DIR='/code/imatools'
+QULATI_DIR=os.getcwd()+'/../quLATi'
 sys.path.insert(1, QULATI_DIR)
-sys.path.insert(1, IMATOOLS_DIR)
 
 from qulati.meshutils import subset_anneal, subset_triangulate, extendMesh
 from imatools.vtktools import *
@@ -56,6 +54,13 @@ outLargeName=outLargeName[0:-4]
 
 cout("Downsampling {} from {} to {} points".format(outLargeName, largeN, smallN), print2console=verbose)
 largePts, largeEl = extractPointsAndElemsFromVtk(largeMsh)
+if largeMsh.GetPointData().GetScalars() is None :
+    cout('Attempting to pass cell data to point data in {}'.format(outLargeName), print2console=verbose)
+    c2p=vtk.vtkCellDataToPointData()
+    c2p.SetInputData(largeMsh)
+    c2p.Update()
+    largeMsh=c2p.GetOutput()
+
 largeScar=convertPointDataToNpArray(largeMsh, 'scalars')
 
 choice=subset_anneal(largePts, largeEl, num=smallN, runs=3000)
